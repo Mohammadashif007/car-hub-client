@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2'
 
 const Add_products = () => {
 
@@ -17,10 +18,33 @@ const Add_products = () => {
         const enginType = form.engine_type.value;
         const price = form.price.value;
         const details = form.details.value;
+        const bodyTypes = form.body_types.value;
+        const color = form.color.value;
 
-        const carInfo = {brandName, brandLogo, carName, carImage, rating, review, transmission, mileage, model, enginType, price, details};
-        console.log(carInfo);
-    }
+        const carsInfo = {brandName, brandLogo, carName, carImage, rating, review, transmission, mileage, model, enginType, price, details, bodyTypes, color};
+        console.log(carsInfo);
+
+        fetch('http://localhost:5000/cars', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(carsInfo)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Successfully added on database',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                form.reset();  
+            }
+        })
+    } 
 
     return (
         <div className='p-10'>
@@ -51,6 +75,10 @@ const Add_products = () => {
                     {/* Price & details */}
                     <input type="text" name='price' placeholder='Price'  className='border px-3 py-2 mt-10'/>
                     <input type="text" name='details' placeholder='Details'  className='border px-3 py-2 ml-10 mt-10'/>
+                    <br />
+                    {/* Body types & color */}
+                    <input type="text" name='body_types' placeholder='Body Types'  className='border px-3 py-2 mt-10'/>
+                    <input type="text" name='color' placeholder='Color'  className='border px-3 py-2 ml-10 mt-10'/>
                     <br />
                     {/* Btn */}
                     <input type="submit" value="Submit" className='btn bg-[#EF1D26] text-white mt-10 ml-40' />
