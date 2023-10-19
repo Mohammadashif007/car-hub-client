@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "brand_logo": "https://i.ibb.co/6FWbzWx/tesla-Logo-com.png",
+      "brand_name": "Tesla"
+    },
+    {
+      "id": 2,
+      "brand_logo": "https://i.ibb.co/LQXvKXM/lamborghini-Logo-com.png",
+      "brand_name": "Lamborghini"
+    },
+    {
+      "id": 3,
+      "brand_logo": "https://i.ibb.co/b5D2M2y/ford-Logo-com.png",
+      "brand_name": "Ford"
+    },
+    {
+      "id": 4,
+      "brand_logo": "https://i.ibb.co/4ZZxt3J/chevrolet-Logo-com.png",
+      "brand_name": "Chevrolet"
+    },
+    {
+      "id": 5,
+      "brand_logo": "https://i.ibb.co/Jqz1JS1/dodge-Logo-com.png",
+      "brand_name": "Dodge"
+    },
+    {
+      "id": 6,
+      "brand_logo": "https://i.ibb.co/34VvGp5/ferrari-Logo-com.png",
+      "brand_name": "Ferrari"
+    },
+    {
+      "id": 7,
+      "brand_logo": "https://i.ibb.co/g9xjFqG/audi-Logo-com.png",
+      "brand_name": "Audi"
+    }
+  ]
+  
