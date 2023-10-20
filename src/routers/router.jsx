@@ -4,6 +4,7 @@ import Add_products from "../components/Add_products/Add_products";
 import Root from "../layout/Root/Root";
 import My_cart from "../components/My_cart/My_cart";
 import Available_cars from "../components/Available_cars/Available_cars";
+import Car_details from "../components/Car_details/Car_details";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,15 @@ const router = createBrowserRouter([
                 path: '/available_cars/:brandName',
                 element: <Available_cars></Available_cars>,
                 loader: ({params}) => fetch(`http://localhost:5000/cars/${params.brandName}`)
+            },
+            {
+                // path: '/available_cars/:id',
+                // element: <Car_details></Car_details>,
+                // loader:({params}) => fetch(`http://localhost:5000/car/${params.id}`)
+
+                path: '/car/:id',
+                element: <Car_details></Car_details>,
+                loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
             }
         ]
     }

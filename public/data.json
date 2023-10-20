@@ -1,38 +1,33 @@
 [
     {
       "id": 1,
-      "brand_logo": "https://i.ibb.co/6FWbzWx/tesla-Logo-com.png",
+      "brand_logo": "https://i.ibb.co/Z6FRsh7/01.png",
       "brand_name": "Tesla"
     },
     {
       "id": 2,
-      "brand_logo": "https://i.ibb.co/LQXvKXM/lamborghini-Logo-com.png",
+      "brand_logo": "https://i.ibb.co/89Vcx46/02.png",
       "brand_name": "Lamborghini"
     },
     {
       "id": 3,
-      "brand_logo": "https://i.ibb.co/b5D2M2y/ford-Logo-com.png",
+      "brand_logo": "https://i.ibb.co/3kzxdsV/03.png",
       "brand_name": "Ford"
     },
     {
       "id": 4,
-      "brand_logo": "https://i.ibb.co/4ZZxt3J/chevrolet-Logo-com.png",
+      "brand_logo": "https://i.ibb.co/zrFQF3Y/04.png",
       "brand_name": "Chevrolet"
     },
     {
       "id": 5,
-      "brand_logo": "https://i.ibb.co/Jqz1JS1/dodge-Logo-com.png",
+      "brand_logo": "https://i.ibb.co/KGmkDNb/06.png",
       "brand_name": "Dodge"
     },
     {
       "id": 6,
-      "brand_logo": "https://i.ibb.co/34VvGp5/ferrari-Logo-com.png",
+      "brand_logo": "https://i.ibb.co/K5qdzLK/05.png",
       "brand_name": "Ferrari"
-    },
-    {
-      "id": 7,
-      "brand_logo": "https://i.ibb.co/g9xjFqG/audi-Logo-com.png",
-      "brand_name": "Audi"
     }
   ]
   

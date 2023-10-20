@@ -9,9 +9,9 @@ const Car_logo = ({carLogo}) => {
         console.log(brandName);
     }
     return (
-        <div onClick={()=>handleNavigate(brand_name)} className='text-center border rounded-md p-5 cursor-pointer hover:bg-gray-200'>
-            <img className= "w-4/5 mx-auto" src={brand_logo} alt="" />
-            <h2>{brand_name}</h2>
+        <div onClick={()=>handleNavigate(brand_name)} className='text-center border rounded-md p-2 cursor-pointer bg-gray-100 hover:-translate-y-1'>
+            <img className= "w-full mx-auto" src={brand_logo} alt="" />
+            <h2 className='text-2xl font-bold'>{brand_name}</h2>
         </div>
     );
 };
