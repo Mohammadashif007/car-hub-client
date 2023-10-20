@@ -27,7 +27,7 @@ const Available_cars = () => {
                     <span className="text-[#EF1D26]"> Cars</span>
                 </h3>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 w-4/5 mx-auto my-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 w-4/5 mx-auto my-10">
                 {specificCars.map((car) => (
                     <Car key={car._id} car={car}></Car>
                 ))}

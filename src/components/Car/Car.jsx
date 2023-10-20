@@ -1,5 +1,5 @@
 import React from "react";
-import {AiFillEye} from "react-icons/ai"
+import { AiFillEye } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
 const Car = ({ car }) => {
@@ -8,7 +8,11 @@ const Car = ({ car }) => {
     const { carName, carImage, details, review, rating, price, _id } = car;
 
     const handleNavigate = (id) => {
-       navigate(`/car/${id}`)
+        navigate(`/car/${id}`);
+    };
+
+    const handleUpdate = () => {
+        navigate(`/update_info/:id`)
     }
 
     return (
@@ -17,7 +21,6 @@ const Car = ({ car }) => {
         //     <h2>{carName}</h2>
         // </div>
 
-        
         <div className="card w-full bg-base-100 shadow-xl">
             <figure>
                 <img className="h-[220px]" src={carImage} alt="car" />
@@ -61,11 +64,24 @@ const Car = ({ car }) => {
                 </div>
                 <p>{details}</p>
                 <div className="border my-4"></div>
-                <div className="card-actions items-center">
+                <div className="card-actions items-center flex">
                     {/* <div className="badge badge-outline">Fashion</div>
                     <div className="badge badge-outline">Products</div> */}
                     <p className="text-2xl font-bold text-[#EF1D26]">{price}</p>
-                    <button onClick={()=>handleNavigate(_id)} className="btn bg-[#EF1D26] text-white text-[17px]"><i className="text-2xl"><AiFillEye></AiFillEye></i>Details</button>
+                    <div className="flex items-center">
+                        <button
+                            onClick={() => handleNavigate(_id)}
+                            className="btn bg-[#EF1D26] text-white text-[17px]"
+                        >
+                            <i className="text-2xl">
+                                <AiFillEye></AiFillEye>
+                            </i>
+                            Details
+                        </button>
+                        <button onClick={() => handleUpdate()} className="btn bg-[#EF1D26] text-[17px] font-bold text-white">
+                            Update
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

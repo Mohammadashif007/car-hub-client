@@ -4,11 +4,10 @@ import Advertisement_car from "../Advertisement_car/Advertisement_car";
 import Marquee from "react-fast-marquee";
 
 const Advertisement_slider = ({ cars }) => {
-    console.log(cars);
 
     return (
         <div>
-            <div className="text-center my-10">
+            <div className="text-center my-1">
                 <div className="flex justify-center gap-2 text-[#EF1D26] items-center text-center ml-8 ">
                     <i className="text-2xl text-center">
                         <AiFillCar />
@@ -22,7 +21,7 @@ const Advertisement_slider = ({ cars }) => {
                     <span className="text-[#EF1D26]"> Cars</span>
                 </h3>
             </div>
-                <div className="flex py-3">
+                <div className="flex py-1">
             <Marquee>
                     {cars.map((car) => (
                         <Advertisement_car
