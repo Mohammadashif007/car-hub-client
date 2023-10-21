@@ -9,6 +9,7 @@ import Update_page from "../components/Update_page/Update_page";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import Error_page from "../components/Error_page/Error_page";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/car/:id',
-                element: <Car_details></Car_details>,
+                element: <PrivateRoute><Car_details></Car_details></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
             },
             {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '*',
+                element: <Error_page></Error_page>
             }
         ]
     }

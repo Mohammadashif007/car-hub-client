@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import Car_logo from "../Car_logo/Car_logo";
 import About_us from "../About_us/About_us";
 import { AiFillCar } from "react-icons/ai";
+import Why_chose_us from "../Why_chose_us/Why_chose_us";
 
 const Home = () => {
     const carsLogo = useLoaderData();
@@ -36,6 +37,7 @@ const Home = () => {
                     <Car_logo key={carLogo.id} carLogo={carLogo}></Car_logo>
                 ))}
             </div>
+            <Why_chose_us></Why_chose_us>
         </div>
     );
 };

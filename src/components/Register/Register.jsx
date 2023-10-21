@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 
 const Register = () => {
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     const {createUser} = useContext(AuthContext);
+    const [success, setSuccess] = useState('');
+    
+
 
     const handleRegistrationForm = e => {
         e.preventDefault();
@@ -14,14 +18,31 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, email, password);
 
+        setError('');
+
+        if(password.length < 6){
+            setError('Password should be 6 character or longer');
+            return;
+        }
+        else if(!/[A-Z]/.test(password)){
+            setError('Password should have one upper case character');
+            return;
+        }
+        else if(!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\\/|]/.test(password)){
+            setError('Password should have one spacial character');
+            return;
+        }
+
         createUser(email, password)
         .then(result => {
             console.log(result.user)
             form.reset();
             navigate('/')
+
         })
         .catch(error => {
             console.error(error)
+            setError(error.message)
         })
     }
     return (
@@ -76,6 +97,9 @@ const Register = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
+                       {
+                        error &&  <p className="text-red-500">{error}</p>
+                       }
                     </form>
                     <p className="p-5">Already have account. Please<span className="text-blue-700"><Link to='/login'> Login</Link></span></p>
                 </div>
