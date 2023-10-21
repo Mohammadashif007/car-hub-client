@@ -8,6 +8,7 @@ import Car_details from "../components/Car_details/Car_details";
 import Update_page from "../components/Update_page/Update_page";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/add_products',
-                element: <Add_products></Add_products>
+                element: <PrivateRoute><Add_products></Add_products></PrivateRoute>
             },
             {
                 path: '/my_cart',

@@ -19,8 +19,13 @@ const Nav_bar = () => {
 
     const navLinks = <>
     <li> <NavLink to='/'>Home</NavLink></li>
-    <li> <NavLink to='/add_products'>Add Product</NavLink></li>
-    <li> <NavLink to='/my_cart'>My Cart</NavLink></li>
+    {
+        user && <>
+        <li> <NavLink to='/add_products'>Add Product</NavLink></li>
+        <li> <NavLink to='/my_cart'>My Cart</NavLink></li>
+        </>
+    }
+    
 </>
     return (
         <div className="navbar bg-base-100 w-11/12 mx-auto">
@@ -58,8 +63,11 @@ const Nav_bar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user ? <button onClick={handleSignOut} className='btn'>Sign Out </button>: <button className='btn'><Link to='/login'>Log in</Link></button>
-                } 
+                    user ? <>
+                    <span>{user.email}</span>
+                    <button onClick={handleSignOut} className='btn'>Sign Out </button>
+                    </>:<button className='btn'><Link to='/login'>Log in</Link></button>
+                }
             </div>
 
         </div>
