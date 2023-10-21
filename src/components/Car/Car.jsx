@@ -11,8 +11,8 @@ const Car = ({ car }) => {
         navigate(`/car/${id}`);
     };
 
-    const handleUpdate = () => {
-        navigate(`/update_info/:id`)
+    const handleUpdate = (id) => {
+        navigate(`/update_info/${id}`)
     }
 
     return (
@@ -78,7 +78,7 @@ const Car = ({ car }) => {
                             </i>
                             Details
                         </button>
-                        <button onClick={() => handleUpdate()} className="btn bg-[#EF1D26] text-[17px] font-bold text-white">
+                        <button onClick={() => handleUpdate(_id)} className="btn bg-[#EF1D26] text-[17px] font-bold text-white">
                             Update
                         </button>
                     </div>
