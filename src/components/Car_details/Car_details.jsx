@@ -1,10 +1,12 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const Car_details = () => {
+    const navigate = useNavigate();
     const detailsData = useLoaderData();
     const carDetails = detailsData[0];
     const {
+        _id,
         carName,
         carImage,
         color,
@@ -15,6 +17,11 @@ const Car_details = () => {
         rating,
         review,
     } = carDetails;
+
+    const handleNavigate = id => {
+        navigate(`/my_cart/${id}`)
+    }
+
     return (
         <div className="my-20 flex justify-center">
             {/* <div>
@@ -39,7 +46,7 @@ const Car_details = () => {
                         <p className="text-2xl font-bold text-[#EF1D26]">
                             {price}
                         </p>
-                        <button className="btn bg-[#EF1D26] text-white text-[17px] mt-5">
+                        <button onClick={() => handleNavigate(_id)} className="btn bg-[#EF1D26] text-white text-[17px] mt-5">
                             Add Cart
                         </button>
                     </div>

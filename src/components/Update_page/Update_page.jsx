@@ -1,12 +1,26 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 const Update_page = () => {
-
     const carInfo = useLoaderData();
-    const { _id, brandLogo, carName, brandName, carImage, details, review, rating, price, transmission, mileage, model, enginType, bodyTypes, color } = carInfo;
-
+    const {
+        _id,
+        brandLogo,
+        carName,
+        brandName,
+        carImage,
+        details,
+        review,
+        rating,
+        price,
+        transmission,
+        mileage,
+        model,
+        enginType,
+        bodyTypes,
+        color,
+    } = carInfo;
 
     const handleUpdateForm = (event) => {
         event.preventDefault();
@@ -44,13 +58,16 @@ const Update_page = () => {
         };
         // console.log(carsInfo);
 
-        fetch(`http://localhost:5000/cars/${_id}`, {
-            method: "PUT",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(updateCarsInfo),
-        })
+        fetch(
+            `https://carhub-server-7b4gnmwge-mohammad-ashifs-projects.vercel.app/cars/${_id}`,
+            {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(updateCarsInfo),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

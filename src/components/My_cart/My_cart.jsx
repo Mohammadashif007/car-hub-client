@@ -1,9 +1,11 @@
 import React from 'react';
 
+
 const My_cart = () => {
+    
     return (
-        <div>
-            <h1>This is my cart</h1>
+        <div className='w-4/5 mx-auto p-20'>
+            <h1>My cart page</h1>
         </div>
     );
 };

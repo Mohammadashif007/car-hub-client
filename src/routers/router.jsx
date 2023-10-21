@@ -13,52 +13,72 @@ import Error_page from "../components/Error_page/Error_page";
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: "/",
         element: <Root></Root>,
         children: [
             {
-                path: '/',
+                path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('data.json')
+                loader: () => fetch("data.json"),
             },
             {
-                path: '/add_products',
-                element: <PrivateRoute><Add_products></Add_products></PrivateRoute>
+                path: "/add_products",
+                element: (
+                    <PrivateRoute>
+                        <Add_products></Add_products>
+                    </PrivateRoute>
+                ),
             },
             {
-                path: '/my_cart',
-                element: <My_cart></My_cart>
+                path: "/my_cart",
+                element: <My_cart></My_cart>,
+                // loader: ({ params }) =>
+                //     fetch(
+                //         `https://carhub-server-7b4gnmwge-mohammad-ashifs-projects.vercel.app/car/${params.id}`
+                //     ),
             },
             {
-                path: '/available_cars/:brandName',
+                path: "/available_cars/:brandName",
                 element: <Available_cars></Available_cars>,
-                loader: ({params}) => fetch(`http://localhost:5000/cars/${params.brandName}`)
+                loader: ({ params }) =>
+                    fetch(
+                        `https://carhub-server-7b4gnmwge-mohammad-ashifs-projects.vercel.app/cars/${params.brandName}`
+                    ),
             },
             {
-                path: '/car/:id',
-                element: <PrivateRoute><Car_details></Car_details></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/car/${params.id}`)
+                path: "/car/:id",
+                element: (
+                    <PrivateRoute>
+                        <Car_details></Car_details>
+                    </PrivateRoute>
+                ),
+                loader: ({ params }) =>
+                    fetch(
+                        `https://carhub-server-7b4gnmwge-mohammad-ashifs-projects.vercel.app/car/${params.id}`
+                    ),
             },
             {
-                path: '/update_info/:id',
+                path: "/update_info/:id",
                 element: <Update_page></Update_page>,
-                loader: ({params}) => fetch(`http://localhost:5000/carInfo/${params.id}`)
+                loader: ({ params }) =>
+                    fetch(
+                        `https://carhub-server-7b4gnmwge-mohammad-ashifs-projects.vercel.app/carInfo/${params.id}`
+                    ),
             },
             {
-                path: '/login',
-                element: <Login></Login>
+                path: "/login",
+                element: <Login></Login>,
             },
             {
-                path: '/register',
-                element: <Register></Register>
+                path: "/register",
+                element: <Register></Register>,
             },
             {
-                path: '*',
-                element: <Error_page></Error_page>
-            }
-        ]
-    }
-])
-
+                path: "*",
+                element: <Error_page></Error_page>,
+            },
+        ],
+    },
+]);
 
 export default router;
